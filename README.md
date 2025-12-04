@@ -36,7 +36,7 @@ user.S	User-mode program making syscalls via ecall
 - Makefile: Builds ELF → binary, links script, runs QEMU
 
 ## Running the OS
-run command the command's in the following order:
+run the command's in the following order:
 1. make clean
 2. make
 3. qemu-system-riscv64 -machine virt -nographic -kernel kernel.bin
@@ -46,5 +46,6 @@ run command the command's in the following order:
 "Create an operating system that runs on  a RISC-V computer that supports being able to load separate programs, running multiple programs simultaneously, synchronization, protection, file system, how to create/load new programs, etc."
 
 " This is an operating system that can run on a RISC-V computer  can you explain each file in detail so I'll have a better understanding of what each file does and its purpose. "
+
 
 Written by Kennedy Poag
