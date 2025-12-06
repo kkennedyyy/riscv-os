@@ -1,5 +1,6 @@
-# trap.S file
-# This file handles all exceptions, interrupts, and syscalls.
+# trap.S file handles all exceptions, interrupts, and syscalls.
+# Saves all registers, delegates logic to C
+# restores registers, advances Sepc, and returns with sret
 
 
 .section .text
@@ -11,7 +12,6 @@ trap_handler:
     addi sp, sp, -256
 
     # Save ALL registers used by C calls + trap logic
-    # This stores All registers on the kernel stack
     sd ra, 0(sp)
     sd sp, 8(sp)
     sd gp, 16(sp)
@@ -53,7 +53,7 @@ trap_handler:
     # Calls the C trap handler
     call kernel_trap
 
-    # Restores registers and returns to user mode
+    # Restores registers 
     ld ra, 0(sp)
     ld sp, 8(sp)
     ld gp, 16(sp)
@@ -88,9 +88,5 @@ trap_handler:
 
     addi sp, sp, 256
 
+    # Return to user mode
     sret
-
-# This file is important because it makes syscalls and exceptions safe by:
-# 1. Preserving CPU state
-# 2. Returning correctly to user mode
-# 3. Passing control to C for logic

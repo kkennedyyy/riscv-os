@@ -1,4 +1,4 @@
-// kernel_trap.c file
+// kernel_trap.c file C-level trap handler logic.
 // After the assembly trap handler saves registers, this file processes the syscall
 #include "uart.h"
 
@@ -6,15 +6,21 @@
 void kernel_trap() {
     long syscall_num, arg0;
 
-    // Extract registers the trap.S saved
+    // Retrieve syscall number and argument from registers
     asm volatile("mv %0, a7" : "=r"(syscall_num));
     asm volatile("mv %0, a0" : "=r"(arg0));
 
+    // Syscall 1: print string
     if (syscall_num == 1) {
-        // Write character syscall
-        uart_putc((char)arg0);
+        char* p = (char*)arg0;
+        while (*p) uart_putc(*p++);
     }
-}
 
-// This file is important because its where the OS can be exapnded:
-// If I wanted to add more file system calls, process control, timers, and memory allocation I would do it here.
+    // Syscall 2: exit program
+    if (syscall_num == 2) {
+        uart_print("[kernel] program exited\n");
+        uart_print("[kernel] halting CPU...\n");
+        // Halt the CPU
+        while (1) {}
+}
+}
