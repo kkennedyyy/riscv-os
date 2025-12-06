@@ -46,13 +46,12 @@ run the command's in the following order:
 
 
 ## Some prompts given to ChatGPT
-"Create an operating system that runs on  a RISC-V computer that supports being able to load separate programs, running multiple programs simultaneously, synchronization, protection, file system, how to create/load new programs, etc."
-“How do I set up the trap handler and stack?”
-“Why is ‘a’ continuously printing in the output?”
-“Why does my OS freeze immediately after QEMU starts?”
-Which QEMU package do I need and how would I download it?”
-“Provide the commands needed to test my OS”
-“How do I add a syscall that prints a full string?”
-“Why is UART not printing anything?”
-"This is an operating system that can run on a RISC-V computer  can you explain each file in detail so I'll have a better understanding of what each file does and its purpose. "
-
+- "Create an operating system that runs on  a RISC-V computer that supports being able to load separate programs, running multiple programs simultaneously, synchronization, protection, file system, how to create/load new programs, etc."
+- “How do I set up the trap handler and stack?”
+- “Why is ‘a’ continuously printing in the output?”
+- “Why does my OS freeze immediately after QEMU starts?”
+- "Which QEMU package do I need and how would I download it?”
+- “Provide the commands needed to test my OS”
+ “How do I add a syscall that prints a full string?”
+ “Why is UART not printing anything?”
+ "This is an operating system that can run on a RISC-V computer  can you explain each file in detail so I'll have a better understanding of what each file does and its purpose. "
