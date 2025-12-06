@@ -52,6 +52,6 @@ run the command's in the following order:
 - “Why does my OS freeze immediately after QEMU starts?”
 - "Which QEMU package do I need and how would I download it?”
 - “Provide the commands needed to test my OS”
- “How do I add a syscall that prints a full string?”
- “Why is UART not printing anything?”
- "This is an operating system that can run on a RISC-V computer  can you explain each file in detail so I'll have a better understanding of what each file does and its purpose. "
+- “How do I add a syscall that prints a full string?”
+- “Why is UART not printing anything?”
+- "This is an operating system that can run on a RISC-V computer  can you explain each file in detail so I'll have a better understanding of what each file does and its purpose. "
